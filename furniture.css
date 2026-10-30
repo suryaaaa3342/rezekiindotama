@@ -1,20 +1,9 @@
 /* ==========================================================================
    DESIGN SYSTEM & CSS VARIABLES
    ========================================================================== */
-:root {
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #06b6d4;
-  --dark: #0f172a;
-  --text: #334155;
-  --light-bg: #f8fafc;
-  --white: #ffffff;
-  --border: #e2e8f0;
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-lg:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.nav-links a.active-nav {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
 }
 
 * {
@@ -32,15 +21,16 @@ html {
 
 body {
   line-height: 1.6;
+  padding-top: 80px; /* Jarak aman agar konten tidak tertutup navbar fixed */
 }
 
 /* ==========================================================================
-   NAVBAR & BRAND
+   NAVBAR & BRAND (Gelap Transparan Konsisten)
    ========================================================================== */
 .brand-logo {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--dark);
+  color: var(--white);
   text-decoration: none;
   letter-spacing: -0.5px;
 }
@@ -54,9 +44,10 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(15, 23, 42, 0.85); /* Gelap transparan */
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   z-index: 1000;
 }
 
@@ -76,19 +67,21 @@ body {
   gap: 2rem;
 }
 
-.nav-links a:not(.btn) {
+/* KHUSUS NAVBAR UTAMA: Teks wajib putih */
+.nav-links > li > a:not(.btn) {
   text-decoration: none;
-  color: var(--text);
+  color: #ffffff !important;
   font-weight: 500;
   transition: var(--transition);
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.35rem;
+  background: transparent !important;
 }
 
 .nav-links > li > a:not(.btn):hover {
-  color: var(--primary);
+  color: var(--primary) !important;
 }
 
 .menu-toggle {
@@ -96,12 +89,14 @@ body {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: var(--dark);
+  color: #ffffff;
   cursor: pointer;
   padding: 0.5rem;
 }
 
-/* Submenu Dropdown */
+/* ==========================================================================
+   SUBMENU DROPDOWN (Kotak Putih, Teks Hitam Jelas Terbaca)
+   ========================================================================== */
 .dropdown {
   position: relative;
 }
@@ -109,6 +104,7 @@ body {
 .dropdown-icon {
   font-size: 0.75rem;
   transition: var(--transition);
+  color: #ffffff;
 }
 
 .dropdown:hover .dropdown-icon {
@@ -120,10 +116,10 @@ body {
   top: 100%;
   left: 0;
   min-width: 240px;
-  background: var(--white);
+  background: #ffffff !important; /* Kotak dropdown wajib putih */
   border: 1px solid var(--border);
   border-radius: 12px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   list-style: none;
   padding: 0.5rem 0;
   opacity: 0;
@@ -144,16 +140,18 @@ body {
   transform: translateY(0);
 }
 
+/* KHUSUS TEKS DALAM DROPDOWN: Wajib gelap/hitam agar terbaca di background putih */
 .dropdown-menu li a {
   padding: 0.75rem 1.25rem;
   font-size: 0.9rem;
-  color: var(--text);
+  color: #1e293b !important; /* Teks hitam/gelap */
   display: flex;
   align-items: center;
   gap: 0.75rem;
   transition: var(--transition);
   text-decoration: none;
   font-weight: 500;
+  background: transparent !important;
 }
 
 .dropdown-menu li a i {
@@ -165,8 +163,8 @@ body {
 
 .dropdown-menu li a:hover,
 .dropdown-menu li a.active {
-  background-color: var(--light-bg);
-  color: var(--primary);
+  background-color: var(--light-bg) !important;
+  color: var(--primary) !important;
   padding-left: 1.5rem;
 }
 
