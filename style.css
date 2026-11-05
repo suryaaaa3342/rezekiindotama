@@ -788,7 +788,26 @@ body {
   font-size: 0.875rem;
 }
 
-/* --- Responsive --- */
+/* ==========================================================================
+   --- RESPONSIF LINTAS PERANGKAT (HP, TABLET, LAPTOP, PC) ---
+   ========================================================================== */
+
+/* 1. Layar Laptop & Desktop Menengah ke Bawah (Max 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .about-client-container {
+    gap: 2.5rem;
+  }
+}
+
+/* 2. Tablet & iPad (Max 992px) */
 @media (max-width: 992px) {
   .about-client-container {
     grid-template-columns: 1fr;
@@ -796,7 +815,7 @@ body {
   }
 
   .hero-client-content h1 {
-    font-size: 2.75rem;
+    font-size: 3rem;
   }
 
   .hero-scroll-indicator {
@@ -804,11 +823,14 @@ body {
   }
 }
 
+/* 3. Smartphone & HP Kecil (Max 768px) */
 @media (max-width: 768px) {
+  /* Munculkan Tombol Hamburger */
   .menu-toggle {
     display: block;
   }
 
+  /* Ubah Navigasi Menjadi Menu Dropdown Vertikal di Mobile */
   .nav-links {
     position: absolute;
     top: 100%;
@@ -830,8 +852,16 @@ body {
 
   .nav-links a:not(.btn) {
     color: var(--white);
+    width: 100%;
   }
 
+  /* Tombol Contact Us Full-Width di HP */
+  .nav-links .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Dropdown Menu Mobile */
   .dropdown {
     width: 100%;
   }
@@ -854,16 +884,43 @@ body {
     color: var(--white) !important;
   }
 
+  /* Penyesuaian Hero & Grid untuk HP */
   .hero-client-style {
     text-align: left;
-    padding-top: 8rem;
+    padding: 7rem 1.25rem 4rem 1.25rem;
+    min-height: auto;
   }
 
   .hero-client-content h1 {
     font-size: 2.25rem;
   }
 
+  .about-client-style,
+  .services,
+  .section-container {
+    padding: 5rem 1.25rem;
+  }
+
+  .about-right-box {
+    padding: 1.5rem;
+  }
+
   .mission-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 4. Layar HP Sangat Kecil (Max 480px) */
+@media (max-width: 480px) {
+  .hero-client-content h1 {
+    font-size: 1.85rem;
+  }
+
+  .brand-logo {
+    font-size: 1.25rem;
   }
 }
