@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Katalog Furnitur & Interior Kantor | PT. SriRezeki IndoTama</title>
+    <title>PT Sri Rezeki Indotama | General Contractor & Supplier</title>
     <meta
       name="description"
-      content="Katalog pengadaan furnitur dan perlengkapan interior kantor berkualitas tinggi untuk menunjang produktivitas dari PT. SriRezeki IndoTama."
+      content="PT. SriRezeki IndoTama adalah perusahaan General Contractor & Supplier terpercaya yang menyediakan layanan konstruksi bangunan, pengadaan barang material, dan solusi infrastruktur."
     />
     <meta name="robots" content="index, follow" />
 
@@ -23,20 +23,19 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- File CSS Global & Khusus Katalog -->
+    <!-- File CSS Terpisah -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="furniture.css" />
   </head>
   <body>
     <!-- Header / Navbar -->
     <header class="navbar-container">
       <nav class="navbar">
         <a
-          href="indotama.html"
+          href="#home"
           class="brand-logo"
           aria-label="PT. SriRezeki IndoTama Homepage"
         >
-          PT. SriRezeki <span>IndoTama</span>
+          PT Sri Rezeki <span>Indotama</span>
         </a>
 
         <button
@@ -48,10 +47,10 @@
         </button>
 
         <ul class="nav-links" id="nav-links">
-          <li><a href="indotama.html#home">Beranda</a></li>
-          <li><a href="indotama.html#about">Tentang Kami</a></li>
-          <li><a href="indotama.html#services">Layanan</a></li>
-          <li><a href="indotama.html#projects">Project</a></li>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#services">Layanan</a></li>
+          <li><a href="#projects">Project</a></li>
 
           <!-- Submenu Katalog -->
           <li class="dropdown">
@@ -83,7 +82,6 @@
             </ul>
           </li>
 
-          <!-- Contact Us Dropdown -->
           <li class="dropdown">
             <a href="#contact" class="btn btn-primary">
               Contact Us <i class="fa-solid fa-chevron-down dropdown-icon"></i>
@@ -115,204 +113,379 @@
     </header>
 
     <main>
-      <!-- Catalog Banner Header -->
-      <section class="catalog-hero">
-        <div class="catalog-hero-content">
-          <span class="badge"
-            ><i class="fa-solid fa-chair"></i> Kenyamanan & Estetika Ruang</span
-          >
-          <h1>Furnitur & Interior Perkantoran</h1>
-          <p>
-            Solusi pengadaan perlengkapan furnitur kantor modern, ergonomis, dan
-            tahan lama untuk menciptakan suasana kerja yang profesional dan
-            produktif.
-          </p>
+      <!-- Hero Section -->
+      <section id="home" class="hero-client-style">
+        <div class="hero-client-container">
+          <div class="hero-client-content">
+            <span class="welcome-top-text">SELAMAT DATANG DI</span>
+            <h1>
+              PT SRI REZEKI <br /><span class="highlight-gold">INDOTAMA</span>
+            </h1>
+            <p class="hero-tagline">
+              BUILDING BETTER SPACES<br />
+              FOR A BRIGHTER TOMORROW
+            </p>
+            <p class="hero-desc">
+              Mitra terpercaya dalam pembangunan, renovasi, dan pengadaan barang
+              dengan kualitas, integritas, dan solusi yang berkelanjutan.
+            </p>
+            <div class="hero-buttons">
+              <a href="#about" class="btn btn-gold-outline"
+                >LIHAT PROFIL KAMI <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+          <a href="#about">
+            <i class="fa-solid fa-computer-mouse"></i>
+            <span>SCROLL</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
         </div>
       </section>
 
-      <!-- Catalog Content Section -->
-      <section class="catalog-section">
-        <div class="catalog-container">
-          <!-- Filter & Search Bar -->
-          <div class="catalog-toolbar">
-            <div class="search-box">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input
-                type="text"
-                id="catalog-search"
-                placeholder="Cari meja, kursi, atau partisi kantor..."
-              />
-            </div>
-            <div class="filter-categories">
-              <button class="filter-btn active" data-filter="all">Semua</button>
-              <button class="filter-btn" data-filter="kursi">
-                Kursi Kerja
-              </button>
-              <button class="filter-btn" data-filter="meja">Meja Kantor</button>
-              <button class="filter-btn" data-filter="penyimpanan">
-                Penyimpanan & Sekat
-              </button>
-            </div>
+      <!-- About Section -->
+      <section id="about" class="about-client-style">
+        <div class="about-client-container">
+          <div class="about-left-box">
+            <span class="about-top-label">TENTANG KAMI</span>
+            <h2>Mewujudkan Ruang yang Lebih Baik untuk Masa Depan</h2>
+            <div class="about-gold-line"></div>
+            <p>
+              PT Sri Rezeki Indotama adalah perusahaan yang bergerak di bidang
+              konstruksi, renovasi, desain, dan pengadaan barang. Dengan
+              pengalaman, integritas, dan komitmen pada kualitas, kami hadir
+              sebagai mitra terpercaya untuk mewujudkan proyek dan kebutuhan
+              bisnis Anda.
+            </p>
           </div>
 
-          <!-- Catalog Grid -->
-          <div class="catalog-grid">
-            <!-- Item 1: Kursi Ergonomis -->
-            <article class="catalog-card" data-category="kursi">
-              <div class="catalog-img">
-                <img
-                  src="kursiergo.png"
-                  alt="Kursi Kantor Ergonomis"
-                  loading="lazy"
-                />
-                <span class="category-tag">Kursi Kerja</span>
-              </div>
-              <div class="catalog-body">
-                <h3>Kursi Kantor Ergonomis Eksekutif</h3>
-                <p>
-                  Kursi kerja dengan sandaran jaring (mesh) berstandar ergonomis
-                  tinggi untuk mendukung kenyamanan posisi duduk seharian di
-                  kantor.
-                </p>
-                <ul class="spec-list">
-                  <li>
-                    <i class="fa-solid fa-check"></i> Sandaran Kepala & Lumbar
-                    Adjustable
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check"></i> Rangka Kokoh & Hidrolik
-                    Premium
-                  </li>
-                </ul>
-                <div class="catalog-footer">
-                  <a
-                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20pengadaan%20Kursi%20Ergonomis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-primary btn-sm"
-                  >
-                    <i class="fa-brands fa-whatsapp"></i> Konsultasi
-                  </a>
+          <div class="about-right-box">
+            <div class="about-right-header">
+              <span class="about-top-label">CARA KAMI MEWUJUDKAN VISI</span>
+              <span class="about-company-tag">PT SRI REZEKI INDOTAMA</span>
+            </div>
+            <h3>Melalui Misi yang Terukur</h3>
+
+            <div class="mission-grid">
+              <div class="mission-item">
+                <div class="mission-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
                 </div>
+                <div class="mission-text">
+                  <h4>Integritas & Kepatuhan</h4>
+                  <p>Membangun bisnis di atas fondasi legalitas yang kokoh.</p>
+                </div>
+              </div>
+
+              <div class="mission-item">
+                <div class="mission-icon">
+                  <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div class="mission-text">
+                  <h4>Sumber Daya Profesional</h4>
+                  <p>Didukung oleh tim yang kompeten dan berpengalaman.</p>
+                </div>
+              </div>
+
+              <div class="mission-item">
+                <div class="mission-icon">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="mission-text">
+                  <h4>Inovasi Berkelanjutan</h4>
+                  <p>
+                    Selalu berkembang untuk memberikan solusi yang efektif dan
+                    optimal.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mission-item">
+                <div class="mission-icon">
+                  <i class="fa-solid fa-users-gear"></i>
+                </div>
+                <div class="mission-text">
+                  <h4>Kolaboratif & Berorientasi Solusi</h4>
+                  <p>
+                    Bekerja bersama untuk menciptakan nilai dan kesuksesan
+                    jangka panjang.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services">
+        <div class="services-bg-overlay"></div>
+        <div class="services-content-wrapper">
+          <div class="section-header">
+            <span class="badge">LAYANAN KAMI</span>
+            <h2>Solusi Terintegrasi untuk Setiap Kebutuhan Anda</h2>
+            <p>
+              Kami menyediakan layanan konstruksi, renovasi, desain, dan
+              pengadaan barang dengan kualitas, ketepatan waktu, serta
+              profesionalisme untuk mendukung keberhasilan proyek dan bisnis
+              Anda.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <!-- Card 1: Konstruksi -->
+            <article class="service-card">
+              <div class="service-img-wrapper">
+                <img
+                  src="https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Konstruksi"
+                />
+                <div class="service-icon-badge">
+                  <i class="fa-solid fa-building-user"></i>
+                </div>
+              </div>
+              <div class="service-body">
+                <h3>Konstruksi</h3>
+                <p>
+                  Pelaksanaan proyek pembangunan gedung, fasilitas publik, dan
+                  infrastruktur dengan standar kualitas, keamanan, dan ketepatan
+                  waktu.
+                </p>
+                <a
+                  href="https://wa.me/628158999400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-detail"
+                >
+                  Lihat Detail
+                  <span class="circle-arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </a>
               </div>
             </article>
 
-            <!-- Item 2: Meja Kerja Staff / Meeting -->
-            <article class="catalog-card" data-category="meja">
-              <div class="catalog-img">
+            <!-- Card 2: Renovasi -->
+            <article class="service-card">
+              <div class="service-img-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"
-                  alt="Meja Kerja Kantor Modern"
-                  loading="lazy"
+                  src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Renovasi"
                 />
-                <span class="category-tag">Meja Kantor</span>
-              </div>
-              <div class="catalog-body">
-                <h3>Meja Kerja & Meja Meeting Modern</h3>
-                <p>
-                  Set meja kantor modular dengan desain minimalis modern,
-                  dilengkapi manajemen kabel rapi dan lapisan anti gores.
-                </p>
-                <ul class="spec-list">
-                  <li>
-                    <i class="fa-solid fa-check"></i> Pilihan Partisi Kubikal
-                    Terintegrasi
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check"></i> Finishing Kayu & Metal
-                    Berkualitas
-                  </li>
-                </ul>
-                <div class="catalog-footer">
-                  <a
-                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20Meja%20Kantor"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-primary btn-sm"
-                  >
-                    <i class="fa-brands fa-whatsapp"></i> Konsultasi
-                  </a>
+                <div class="service-icon-badge">
+                  <i class="fa-solid fa-paint-roller"></i>
                 </div>
+              </div>
+              <div class="service-body">
+                <h3>Renovasi</h3>
+                <p>
+                  Renovasi bangunan, ruang kerja, fasilitas kesehatan, rumah
+                  tinggal, serta perbaikan dan peningkatan fasilitas sesuai
+                  kebutuhan.
+                </p>
+                <a
+                  href="https://wa.me/628158999400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-detail"
+                >
+                  Konsultasi
+                  <span class="circle-arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </a>
               </div>
             </article>
 
-            <!-- Item 3: Lemari Arsip / Filing Cabinet -->
-            <article class="catalog-card" data-category="penyimpanan">
-              <div class="catalog-img">
+            <!-- Card 3: Desain & Build -->
+            <article class="service-card">
+              <div class="service-img-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=600&q=80"
-                  alt="Lemari Arsip Filing Cabinet"
-                  loading="lazy"
+                  src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Desain & Build"
                 />
-                <span class="category-tag">Penyimpanan & Sekat</span>
-              </div>
-              <div class="catalog-body">
-                <h3>Lemari Arsip & Filing Cabinet Besi</h3>
-                <p>
-                  Kabinet penyimpanan dokumen perkantoran berbahan plat baja
-                  tebal anti karat dengan sistem penguncian keamanan ganda.
-                </p>
-                <ul class="spec-list">
-                  <li>
-                    <i class="fa-solid fa-check"></i> Kapasitas Besar & Rak
-                    Adjustable
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check"></i> Sistem Kunci Sentral
-                    Otomatis
-                  </li>
-                </ul>
-                <div class="catalog-footer">
-                  <a
-                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20Filing%20Cabinet"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-primary btn-sm"
-                  >
-                    <i class="fa-brands fa-whatsapp"></i> Konsultasi
-                  </a>
+                <div class="service-icon-badge">
+                  <i class="fa-solid fa-drafting-compass"></i>
                 </div>
+              </div>
+              <div class="service-body">
+                <h3>Desain & Build</h3>
+                <p>
+                  Perancangan desain arsitektur dan interior serta pelaksanaan
+                  konstruksi secara terpadu untuk hasil yang fungsional, estetis
+                  dan efisien.
+                </p>
+                <a
+                  href="https://wa.me/628158999400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-detail"
+                >
+                  Konsultasi
+                  <span class="circle-arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </a>
               </div>
             </article>
 
-            <!-- Item 4: Sofa & Partisi Ruangan -->
-            <article class="catalog-card" data-category="penyimpanan">
-              <div class="catalog-img">
+            <!-- Card 4: Pengadaan Barang -->
+            <article class="service-card">
+              <div class="service-img-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"
-                  alt="Sofa Ruang Tunggu Kantor"
-                  loading="lazy"
+                  src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Pengadaan Barang"
                 />
-                <span class="category-tag">Penyimpanan & Sekat</span>
-              </div>
-              <div class="catalog-body">
-                <h3>Sofa Ruang Tunggu & Partisi Ruangan</h3>
-                <p>
-                  Pilihan sofa lobi kantor yang elegan serta partisi pembatas
-                  ruangan akustik untuk menjaga privasi area kerja terbuka.
-                </p>
-                <ul class="spec-list">
-                  <li>
-                    <i class="fa-solid fa-check"></i> Bahan Kulit Sintetis /
-                    Kain Premium
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check"></i> Desain Custom Sesuai
-                    Interior Ruangan
-                  </li>
-                </ul>
-                <div class="catalog-footer">
-                  <a
-                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20Sofa%20dan%20Partisi%20Kantor"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-primary btn-sm"
-                  >
-                    <i class="fa-brands fa-whatsapp"></i> Konsultasi
-                  </a>
+                <div class="service-icon-badge">
+                  <i class="fa-solid fa-boxes-packing"></i>
                 </div>
               </div>
+              <div class="service-body">
+                <h3>Pengadaan Barang</h3>
+                <p>
+                  Penyediaan berbagai kebutuhan elektronik, peralatan kantor,
+                  furnitur, perlengkapan bangunan dan barang pendukung
+                  operasional melalui katalog resmi (INAPROC).
+                </p>
+                <a
+                  href="https://wa.me/628158999400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-detail"
+                >
+                  Konsultasi
+                  <span class="circle-arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </a>
+              </div>
             </article>
+
+            <!-- Card 5: Instalasi & Pemeliharaan -->
+            <article class="service-card">
+              <div class="service-img-wrapper">
+                <img
+                  src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Instalasi & Pemeliharaan"
+                />
+                <div class="service-icon-badge">
+                  <i class="fa-solid fa-plug-circle-bolt"></i>
+                </div>
+              </div>
+              <div class="service-body">
+                <h3>Instalasi & Pemeliharaan</h3>
+                <p>
+                  Pekerjaan instalasi listrik, mekanikal, serta pemeliharaan
+                  fasilitas bangunan untuk menunjang operasional yang optimal.
+                </p>
+                <a
+                  href="https://wa.me/628158999400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-detail"
+                >
+                  Konsultasi
+                  <span class="circle-arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 6: Konsultasi Proyek -->
+            <article class="service-card">
+              <div class="service-img-wrapper">
+                <img
+                  src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Konsultasi Proyek"
+                />
+                <div class="service-icon-badge">
+                  <i class="fa-solid fa-user-group"></i>
+                </div>
+              </div>
+              <div class="service-body">
+                <h3>Konsultasi Proyek</h3>
+                <p>
+                  Pendampingan dan konsultasi untuk perencanaan, pengelolaan,
+                  dan pengadaan proyek agar lebih efektif, efisien, dan sesuai
+                  dengan kebutuhan Anda.
+                </p>
+                <a
+                  href="https://wa.me/628158999400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-detail"
+                >
+                  Konsultasi
+                  <span class="circle-arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section (Hanya 4 Gambar Galeri Saja) -->
+      <section id="projects" class="section-container">
+        <div
+          class="section-header"
+          style="text-align: center; margin-bottom: 3rem"
+        >
+          <span class="badge">PORTOFOLIO</span>
+          <h2
+            style="
+              font-size: 2.25rem;
+              font-weight: 800;
+              margin-top: 0.5rem;
+              margin-bottom: 0.75rem;
+              color: var(--dark);
+            "
+          >
+            Dokumentasi Project
+          </h2>
+          <p style="color: #64748b; max-width: 600px; margin: 0 auto">
+            Beberapa portofolio dokumentasi pengerjaan proyek dan pengadaan
+            material oleh perusahaan kami.
+          </p>
+        </div>
+
+        <div class="projects-gallery-grid">
+          <!-- Gambar 1 -->
+          <div class="project-img-item">
+            <img
+              src="cipondoh.png"
+              alt="Dokumentasi Project 1"
+              loading="lazy"
+            />
+          </div>
+          <!-- Gambar 2 -->
+          <div class="project-img-item">
+            <img
+              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"
+              alt="Dokumentasi Project 2"
+              loading="lazy"
+            />
+          </div>
+          <!-- Gambar 3 -->
+          <div class="project-img-item">
+            <img
+              src="https://images.unsplash.com/photo-1542744094-3a31243364d0?auto=format&fit=crop&w=600&q=80"
+              alt="Dokumentasi Project 3"
+              loading="lazy"
+            />
+          </div>
+          <!-- Gambar 4 -->
+          <div class="project-img-item">
+            <img
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80"
+              alt="Dokumentasi Project 4"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -322,17 +495,18 @@
     <footer class="footer" id="contact">
       <div class="footer-content">
         <div class="footer-info">
-          <div class="brand-logo">PT. SriRezeki <span>IndoTama</span></div>
+          <div class="brand-logo">PT Sri Rezeki <span>IndoTama</span></div>
           <p>
-            Mitra terpercaya untuk pengadaan furnitur dan penataan interior
-            profesional perkantoran.
+            Mitra terpercaya untuk layanan konstruksi umum dan pengadaan barang
+            berkualitas tinggi.
           </p>
         </div>
         <div class="footer-links">
           <p><strong>Daftar Halaman</strong></p>
-          <a href="indotama.html">Beranda</a>
-          <a href="indotama.html">Tentang Kami</a>
-          <a href="indotama.html">Layanan</a>
+          <a href="#home">Beranda</a>
+          <a href="#about">Tentang Kami</a>
+          <a href="#services">Layanan</a>
+          <a href="#projects">Project</a>
         </div>
         <div class="footer-socials">
           <p><strong>Contact Us</strong></p>
@@ -353,14 +527,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 PT. SriRezeki IndoTama. All rights reserved.</p>
+        <p>&copy; 2026 PT Sri Rezeki IndoTama. All rights reserved.</p>
       </div>
     </footer>
 
-    <!-- Script Menu Navigation & Filter Search Katalog -->
+    <!-- Script Menu Toggle -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Menu Toggle Mobile
         const menuToggle = document.getElementById("menu-toggle");
         const navLinks = document.getElementById("nav-links");
 
@@ -377,46 +550,6 @@
                 icon.classList.add("fa-bars");
               }
             }
-          });
-        }
-
-        // Filter Katalog
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const catalogCards = document.querySelectorAll(".catalog-card");
-        const searchInput = document.getElementById("catalog-search");
-
-        filterBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            filterBtns.forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            const filter = btn.getAttribute("data-filter");
-            catalogCards.forEach((card) => {
-              if (
-                filter === "all" ||
-                card.getAttribute("data-category") === filter
-              ) {
-                card.style.display = "flex";
-              } else {
-                card.style.display = "none";
-              }
-            });
-          });
-        });
-
-        // Live Search Katalog
-        if (searchInput) {
-          searchInput.addEventListener("input", (e) => {
-            const value = e.target.value.toLowerCase();
-            catalogCards.forEach((card) => {
-              const title = card.querySelector("h3").innerText.toLowerCase();
-              const desc = card.querySelector("p").innerText.toLowerCase();
-              if (title.includes(value) || desc.includes(value)) {
-                card.style.display = "flex";
-              } else {
-                card.style.display = "none";
-              }
-            });
           });
         }
       });
