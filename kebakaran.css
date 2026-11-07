@@ -1,18 +1,25 @@
 /* ==========================================================================
-   GLOBAL DESIGN SYSTEM & VARIABLES
+   1. DESIGN SYSTEM & CSS VARIABLES
    ========================================================================== */
-.nav-links a.active-nav {
-  color: var(--primary) !important;
-  font-weight: 700 !important;
+:root {
+  --primary: #de942c;
+  --primary-hover: #e38f20;
+  --gold: #d97706;
+  --gold-light: #f59e0b;
+  --dark: #0f172a;
+  --text: #334155;
+  --light-bg: #f8fafc;
+  --white: #ffffff;
+  --border: #e2e8f0;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dropdown-menu li a.active {
-  background-color: var(--light-bg);
-  color: var(--primary);
-  font-weight: 700;
-}
-
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,20 +32,28 @@ html {
   background-color: var(--white);
 }
 
+/* Hilangkan padding top agar background hero menyatu mulus di balik navbar */
 body {
   line-height: 1.6;
-  padding-top: 80px; /* Jarak aman agar konten tidak tertutup navbar fixed */
+  padding-top: 0 !important;
+  background-color: #0f172a;
+}
+
+.nav-links a.active-nav {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
 }
 
 /* ==========================================================================
-   BRAND & NAVBAR (Konsisten dengan Halaman Utama)
+   2. NAVBAR & BRAND (KOMPAK & RAPI DALAM 1 BARIS)
    ========================================================================== */
 .brand-logo {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--white);
   text-decoration: none;
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
 .brand-logo span {
@@ -50,7 +65,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.85); /* Gelap transparan */
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -60,7 +75,7 @@ body {
 .navbar {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.75rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,37 +85,25 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  white-space: nowrap;
 }
 
 .nav-links > li > a:not(.btn) {
   text-decoration: none;
   color: #ffffff !important;
   font-weight: 500;
+  font-size: 0.95rem;
   transition: var(--transition);
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.35rem;
-}
-
-.nav-links > li > a:not(.btn)::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: var(--primary);
-  transition: var(--transition);
+  background: transparent !important;
 }
 
 .nav-links > li > a:not(.btn):hover {
   color: var(--primary) !important;
-}
-
-.nav-links > li > a:not(.btn):hover::after {
-  width: 100%;
 }
 
 .menu-toggle {
@@ -114,7 +117,7 @@ body {
 }
 
 /* ==========================================================================
-   DROPDOWN MENU (Background Putih & Teks Jelas Seperti Sebelah Kanan)
+   3. SUBMENU DROPDOWN (KOTAK PUTIH, TEKS HITAM JELAS)
    ========================================================================== */
 .dropdown {
   position: relative;
@@ -134,8 +137,8 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 230px;
-  background: #ffffff !important; /* Background putih bersih */
+  min-width: 240px;
+  background: #ffffff !important;
   border: 1px solid var(--border);
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -159,11 +162,10 @@ body {
   transform: translateY(0);
 }
 
-/* Perbaikan spesifik agar teks di dalam dropdown berwarna gelap dan terbaca */
 .dropdown-menu li a {
   padding: 0.75rem 1.25rem;
   font-size: 0.9rem;
-  color: #1e293b !important; /* Teks warna gelap kontras di atas putih */
+  color: #1e293b !important;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -171,6 +173,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   background: transparent !important;
+  white-space: normal;
 }
 
 .dropdown-menu li a i {
@@ -178,13 +181,6 @@ body {
   font-size: 1rem;
   width: 20px;
   text-align: center;
-}
-
-.dropdown-menu li a i.whatsapp-icon {
-  color: #25d366;
-}
-.dropdown-menu li a i.instagram-icon {
-  color: #e4405f;
 }
 
 .dropdown-menu li a:hover,
@@ -195,59 +191,62 @@ body {
 }
 
 /* ==========================================================================
-   BUTTONS & BADGES
+   4. BUTTONS & BADGES
    ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.25rem;
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
   transition: var(--transition);
   cursor: pointer;
   border: 2px solid transparent;
+  font-size: 0.95rem;
 }
 
 .btn-primary {
   background-color: var(--primary);
   color: var(--white) !important;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 14px rgba(222, 148, 44, 0.3);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
 }
 
 .badge {
   display: inline-block;
   padding: 0.35rem 1rem;
-  background-color: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--gold-light);
   border-radius: 30px;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 /* ==========================================================================
-   CATALOG STYLES
+   5. KATALOG HERO (MENYATU SEMPURNA DI BALIK NAVBAR)
    ========================================================================== */
 .catalog-hero {
   background:
     linear-gradient(
       135deg,
-      rgba(15, 23, 42, 0.95) 0%,
+      rgba(15, 23, 42, 0.92) 0%,
       rgba(30, 41, 59, 0.9) 100%
     ),
-    url("https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1600&q=80")
+    url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80")
       center/cover no-repeat;
   color: var(--white);
-  padding: 9rem 2rem 5rem 2rem;
+  /* Padding atas 180px membuat gambar naik ke atas menutupi celah putih, 
+     tetapi teks judul otomatis turun di bawah navbar */
+  padding: 180px 2rem 5rem 2rem !important;
   text-align: center;
+  width: 100%;
 }
 
 .catalog-hero-content {
@@ -258,8 +257,9 @@ body {
 .catalog-hero h1 {
   font-size: 2.75rem;
   font-weight: 800;
-  margin: 1rem 0;
+  margin: 0.5rem 0 1rem 0;
   color: var(--white);
+  line-height: 1.2;
 }
 
 .catalog-hero p {
@@ -267,6 +267,9 @@ body {
   color: #cbd5e1;
 }
 
+/* ==========================================================================
+   6. KATALOG CONTENT & GRID RESPONSIF
+   ========================================================================== */
 .catalog-section {
   padding: 4rem 2rem 6rem 2rem;
   background-color: var(--light-bg);
@@ -277,75 +280,9 @@ body {
   margin: 0 auto;
 }
 
-.catalog-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-  background: var(--white);
-  padding: 1.25rem 1.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border);
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: var(--light-bg);
-  padding: 0.6rem 1.2rem;
-  border-radius: 50px;
-  border: 1px solid var(--border);
-  flex: 1;
-  min-width: 260px;
-}
-
-.search-box i {
-  color: #94a3b8;
-}
-
-.search-box input {
-  border: none;
-  background: transparent;
-  outline: none;
-  width: 100%;
-  font-family: inherit;
-  font-size: 0.95rem;
-  color: var(--dark);
-}
-
-.filter-categories {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  border: 1px solid var(--border);
-  background: var(--white);
-  color: var(--text);
-  padding: 0.5rem 1.25rem;
-  border-radius: 50px;
-  font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-  background-color: var(--primary);
-  color: var(--white);
-  border-color: var(--primary);
-}
-
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -363,12 +300,12 @@ body {
 .catalog-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: transparent;
+  border-color: var(--primary);
 }
 
 .catalog-img {
   position: relative;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -381,19 +318,6 @@ body {
 
 .catalog-card:hover .catalog-img img {
   transform: scale(1.05);
-}
-
-.category-tag {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(8px);
-  color: var(--white);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 30px;
 }
 
 .catalog-body {
@@ -416,41 +340,8 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.spec-list {
-  list-style: none;
-  margin-bottom: 1.5rem;
-  margin-top: auto;
-  border-top: 1px dashed var(--border);
-  padding-top: 1rem;
-}
-
-.spec-list li {
-  font-size: 0.85rem;
-  color: var(--text);
-  margin-bottom: 0.35rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.spec-list li i {
-  color: #10b981;
-  font-size: 0.8rem;
-}
-
-.catalog-footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.btn-sm {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.85rem;
-}
-
 /* ==========================================================================
-   FOOTER
+   7. FOOTER
    ========================================================================== */
 .footer {
   background-color: var(--dark);
@@ -472,10 +363,6 @@ body {
 .footer-info p {
   margin-top: 1rem;
   max-width: 320px;
-}
-
-.footer .brand-logo {
-  color: var(--white);
 }
 
 .footer-links,
@@ -510,8 +397,15 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVE LAYOUT
+   8. MEDIA QUERIES (RESPONSIF MOBILE / TABLET / PC)
    ========================================================================== */
+@media (max-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -522,11 +416,11 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--white);
+    background: var(--dark);
     flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
-    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--shadow-md);
     display: none;
     align-items: flex-start;
@@ -534,6 +428,10 @@ body {
 
   .nav-links.active {
     display: flex;
+  }
+
+  .nav-links > li > a:not(.btn) {
+    width: 100%;
   }
 
   .dropdown {
@@ -549,28 +447,39 @@ body {
     box-shadow: none;
     border: none;
     width: 100%;
+    background: rgba(255, 255, 255, 0.05) !important;
     padding-left: 1rem;
     margin-top: 0.5rem;
   }
 
-  .catalog-hero {
-    padding-top: 7rem;
+  .dropdown-menu li a {
+    color: var(--white) !important;
   }
+
+  .catalog-hero {
+    padding: 140px 1.25rem 3rem 1.25rem !important;
+  }
+
   .catalog-hero h1 {
     font-size: 2rem;
   }
 
-  .catalog-toolbar {
-    flex-direction: column;
-    align-items: stretch;
+  .catalog-section {
+    padding: 3rem 1rem 4rem 1rem;
   }
 
-  .search-box {
-    width: 100%;
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-hero h1 {
+    font-size: 1.65rem;
   }
 
-  .filter-categories {
-    overflow-x: auto;
-    padding-bottom: 0.25rem;
+  .brand-logo {
+    font-size: 1.25rem;
   }
 }
