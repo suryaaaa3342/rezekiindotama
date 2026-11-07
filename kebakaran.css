@@ -32,7 +32,7 @@ html {
   background-color: var(--white);
 }
 
-/* Hilangkan padding top agar background hero menyatu mulus di balik navbar */
+/* Hilangkan padding top agar background hero menyatu mulus di balik navbar fixed */
 body {
   line-height: 1.6;
   padding-top: 0 !important;
@@ -45,15 +45,16 @@ body {
 }
 
 /* ==========================================================================
-   2. NAVBAR & BRAND (KOMPAK & RAPI DALAM 1 BARIS)
+   2. NAVBAR & BRAND (KOMPAK & RAPI DALAM 1 BARIS SEJAJAR)
    ========================================================================== */
 .brand-logo {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--white);
   text-decoration: none;
   letter-spacing: -0.5px;
-  white-space: nowrap;
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .brand-logo span {
@@ -65,7 +66,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -73,9 +74,9 @@ body {
 }
 
 .navbar {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
-  padding: 0.75rem 2rem;
+  padding: 0.65rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,21 +86,27 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 1.5rem;
-  white-space: nowrap;
+  gap: 1.15rem; /* Gap dirapatkan agar "Tentang Kami" muat 1 baris */
+  white-space: nowrap !important;
+}
+
+.nav-links li {
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .nav-links > li > a:not(.btn) {
   text-decoration: none;
   color: #ffffff !important;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: var(--transition);
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.35rem;
   background: transparent !important;
+  white-space: nowrap !important;
 }
 
 .nav-links > li > a:not(.btn):hover {
@@ -121,6 +128,7 @@ body {
    ========================================================================== */
 .dropdown {
   position: relative;
+  flex-shrink: 0;
 }
 
 .dropdown-icon {
@@ -173,7 +181,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   background: transparent !important;
-  white-space: normal;
+  white-space: normal !important;
 }
 
 .dropdown-menu li a i {
@@ -196,15 +204,17 @@ body {
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.25rem;
+  gap: 0.4rem;
+  padding: 0.5rem 1.2rem;
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
   transition: var(--transition);
   cursor: pointer;
   border: 2px solid transparent;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .btn-primary {
@@ -242,9 +252,7 @@ body {
     url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80")
       center/cover no-repeat;
   color: var(--white);
-  /* Padding atas 180px membuat gambar naik ke atas menutupi celah putih, 
-     tetapi teks judul otomatis turun di bawah navbar */
-  padding: 180px 2rem 5rem 2rem !important;
+  padding: 160px 2rem 5rem 2rem !important;
   text-align: center;
   width: 100%;
 }
@@ -268,7 +276,7 @@ body {
 }
 
 /* ==========================================================================
-   6. KATALOG CONTENT & GRID RESPONSIF
+   6. KATALOG CONTENT & TOOLBAR (PENCARIAN & FILTER DIPERBAIKI)
    ========================================================================== */
 .catalog-section {
   padding: 4rem 2rem 6rem 2rem;
@@ -280,6 +288,74 @@ body {
   margin: 0 auto;
 }
 
+/* KODE TOOLBAR DITAMBAHKAN KEMBALI DI SINI */
+.catalog-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  background: var(--white);
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--light-bg);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  flex: 1;
+  min-width: 260px;
+}
+
+.search-box i {
+  color: #94a3b8;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--dark);
+}
+
+.filter-categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+/* Grid Cards Produk */
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -318,6 +394,19 @@ body {
 
 .catalog-card:hover .catalog-img img {
   transform: scale(1.05);
+}
+
+.category-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
 }
 
 .catalog-body {
@@ -457,7 +546,7 @@ body {
   }
 
   .catalog-hero {
-    padding: 140px 1.25rem 3rem 1.25rem !important;
+    padding: 130px 1.25rem 3rem 1.25rem !important;
   }
 
   .catalog-hero h1 {
@@ -466,6 +555,28 @@ body {
 
   .catalog-section {
     padding: 3rem 1rem 4rem 1rem;
+  }
+
+  .catalog-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .filter-categories {
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .catalog-grid {
@@ -480,6 +591,6 @@ body {
   }
 
   .brand-logo {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 }
