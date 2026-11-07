@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Katalog Alat Elektronik | PT Sri Rezeki IndoTama</title>
+    <title>Katalog Alat Tulis Kantor (ATK) | PT Sri Rezeki IndoTama</title>
     <meta
       name="description"
-      content="Katalog pengadaan alat elektronik perkantoran berkualitas tinggi dari PT. SriRezeki IndoTama. Meliputi perangkat IT, ruang meeting, dan pendukung operasional kantor."
+      content="Katalog pengadaan alat tulis kantor (ATK) dan perlengkapan administrasi harian perusahaan berkualitas dari PT. SriRezeki IndoTama."
     />
     <meta name="robots" content="index, follow" />
 
@@ -23,18 +23,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- File CSS Global/Landing Page dan CSS Khusus Katalog -->
+    <!-- Panggilan File CSS Terpisah -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="kontruksi.css" />
+    <link rel="stylesheet" href="atk.css" />
   </head>
   <body>
-    <!-- Header / Navbar (Konsisten dengan Halaman Utama) -->
+    <!-- Header / Navbar -->
     <header class="navbar-container">
       <nav class="navbar">
         <a
           href="indotama.html"
           class="brand-logo"
-          aria-label="PT. SriRezeki IndoTama Homepage"
+          aria-label="PT Sri Rezeki IndoTama Homepage"
         >
           PT Sri Rezeki <span>IndoTama</span>
         </a>
@@ -76,7 +76,7 @@
                 </a>
               </li>
               <li>
-                <a href="katalog-atk.html" class="active">
+                <a href="katalog-atk.html">
                   <i class="fa-solid fa-pen-clip"></i> Alat Tulis Kantor (ATK)
                 </a>
               </li>
@@ -119,13 +119,14 @@
       <section class="catalog-hero">
         <div class="catalog-hero-content">
           <span class="badge"
-            ><i class="fa-solid fa-bolt"></i> Katalog Alat Elektronik</span
+            ><i class="fa-solid fa-clipboard-list"></i> Administrasi &
+            Operasional</span
           >
-          <h1>Alat Elektronik & Perkantoran</h1>
+          <h1>Alat Tulis Kantor (ATK)</h1>
           <p>
-            Solusi komprehensif pengadaan perangkat elektronik dan teknologi
-            terbaik untuk mendukung kelancaran operasional perkantoran korporat
-            secara efisien dan handal.
+            Solusi pengadaan perlengkapan tulis, kertas, arsip, dan alat
+            pendukung administrasi harian perusahaan untuk efisiensi kerja
+            optimal.
           </p>
         </div>
       </section>
@@ -140,51 +141,54 @@
               <input
                 type="text"
                 id="catalog-search"
-                placeholder="Cari perangkat elektronik kantor..."
+                placeholder="Cari perlengkapan ATK..."
               />
             </div>
             <div class="filter-categories">
               <button class="filter-btn active" data-filter="all">Semua</button>
-              <button class="filter-btn" data-filter="it">IT & Komputer</button>
-              <button class="filter-btn" data-filter="presentasi">
-                Ruang Meeting
+              <button class="filter-btn" data-filter="tulis">
+                Alat Tulis & Koreksi
               </button>
-              <button class="filter-btn" data-filter="pendukung">
-                Pendukung Kantor
+              <button class="filter-btn" data-filter="kertas">
+                Kertas & Buku
+              </button>
+              <button class="filter-btn" data-filter="arsip">
+                Arsip & Organizer
               </button>
             </div>
           </div>
 
           <!-- Catalog Grid -->
           <div class="catalog-grid">
-            <!-- Item 1: IT & Komputer -->
-            <article class="catalog-card" data-category="it">
+            <!-- Item 1: Kertas HVS & Print -->
+            <article class="catalog-card" data-category="kertas">
               <div class="catalog-img">
                 <img
-                  src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80"
-                  alt="PC Desktop dan Laptop Kantor"
+                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80"
+                  alt="Kertas HVS Kantor"
                   loading="lazy"
                 />
-                <span class="category-tag">IT & Komputer</span>
+                <span class="category-tag">Kertas & Buku</span>
               </div>
               <div class="catalog-body">
-                <h3>PC Desktop, Laptop & Server</h3>
+                <h3>Kertas HVS A4 & F4 (75gsm / 80gsm)</h3>
                 <p>
-                  Pengadaan perangkat komputer kerja, laptop standar korporat,
-                  serta server penyimpanan data internal perusahaan.
+                  Kertas cetak berkualitas tinggi, putih bersih, bebas macet
+                  (jamming) untuk mesin printer dan fotokopi harian kantor.
                 </p>
                 <ul class="spec-list">
                   <li>
-                    <i class="fa-solid fa-check"></i> Spesifikasi Standar
-                    Korporat
+                    <i class="fa-solid fa-check"></i> Tersedia Ukuran A4 & F4 /
+                    Folio
                   </li>
                   <li>
-                    <i class="fa-solid fa-check"></i> Garansi Resmi & Siap Pakai
+                    <i class="fa-solid fa-check"></i> Ketebalan Standar Korporat
+                    (75/80 GSM)
                   </li>
                 </ul>
                 <div class="catalog-footer">
                   <a
-                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20pengadaan%20PC%20dan%20Laptop%20Kantor"
+                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20pengadaan%20Kertas%20HVS"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn btn-primary btn-sm"
@@ -195,34 +199,35 @@
               </div>
             </article>
 
-            <!-- Item 2: Ruang Meeting -->
-            <article class="catalog-card" data-category="presentasi">
+            <!-- Item 2: Alat Tulis (Pulpen, Pensil, Spidol) -->
+            <article class="catalog-card" data-category="tulis">
               <div class="catalog-img">
                 <img
-                  src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=600&q=80"
-                  alt="Proyektor dan Smart TV"
+                  src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=600&q=80"
+                  alt="Pulpen dan Alat Tulis"
                   loading="lazy"
                 />
-                <span class="category-tag">Ruang Meeting</span>
+                <span class="category-tag">Alat Tulis & Koreksi</span>
               </div>
               <div class="catalog-body">
-                <h3>Smart TV, Proyektor & Video Conference</h3>
+                <h3>Pulpen, Highlighter & Spidol Whiteboard</h3>
                 <p>
-                  Perlengkapan ruang rapat modern seperti layar interaktif/Smart
-                  TV, proyektor, serta kamera & speakerphone.
+                  Perlengkapan tulis standar kantor yang nyaman digunakan, tinta
+                  lancar, serta spidol permanen & whiteboard isi ulang.
                 </p>
                 <ul class="spec-list">
                   <li>
-                    <i class="fa-solid fa-check"></i> Resolusi Tinggi 4K / Full
-                    HD
+                    <i class="fa-solid fa-check"></i> Nyaman Digunakan & Tidak
+                    Luntur
                   </li>
                   <li>
-                    <i class="fa-solid fa-check"></i> Kompatibel Zoom & Teams
+                    <i class="fa-solid fa-check"></i> Tersedia Paket Grosir Per
+                    Box
                   </li>
                 </ul>
                 <div class="catalog-footer">
                   <a
-                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20perangkat%20Ruang%20Meeting"
+                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20pengadaan%20Alat%20Tulis"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn btn-primary btn-sm"
@@ -233,35 +238,74 @@
               </div>
             </article>
 
-            <!-- Item 3: Pendukung Kantor -->
-            <article class="catalog-card" data-category="pendukung">
+            <!-- Item 3: Organizer & Map Arsip -->
+            <article class="catalog-card" data-category="arsip">
               <div class="catalog-img">
                 <img
-                  src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?auto=format&fit=crop&w=600&q=80"
-                  alt="Printer dan Mesin Absensi"
+                  src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=600&q=80"
+                  alt="Map Arsip dan Binder"
                   loading="lazy"
                 />
-                <span class="category-tag">Pendukung Kantor</span>
+                <span class="category-tag">Arsip & Organizer</span>
               </div>
               <div class="catalog-body">
-                <h3>Printer, Mesin Fotokopi & Absensi</h3>
+                <h3>Ordner, Ring Binder & Map Dokumen</h3>
                 <p>
-                  Penyediaan mesin cetak dokumen, mesin fotokopi komersial,
-                  serta mesin absensi sidik jari/face recognition.
+                  Solusi penyimpanan arsip fisik agar tetap rapi, terstruktur,
+                  mudah dikelompokkan, dan aman dari kerusakan.
                 </p>
                 <ul class="spec-list">
                   <li>
-                    <i class="fa-solid fa-check"></i> Efisiensi Tinta & Kinerja
-                    Cepat
+                    <i class="fa-solid fa-check"></i> Kapasitas Muat Kertas
+                    Besar
                   </li>
                   <li>
-                    <i class="fa-solid fa-check"></i> Rekap Data Absensi
-                    Otomatis
+                    <i class="fa-solid fa-check"></i> Label Punggung Mudah
+                    Ditulis
                   </li>
                 </ul>
                 <div class="catalog-footer">
                   <a
-                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20pengadaan%20Printer%20dan%20Mesin%20Absensi"
+                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20pengadaan%20Ordner%20dan%20Map"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary btn-sm"
+                  >
+                    <i class="fa-brands fa-whatsapp"></i> Konsultasi
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Item 4: Stapler, Cutter & Perlangkapan Meja -->
+            <article class="catalog-card" data-category="tulis">
+              <div class="catalog-img">
+                <img
+                  src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=600&q=80"
+                  alt="Stapler dan Alat Meja Kantor"
+                  loading="lazy"
+                />
+                <span class="category-tag">Alat Tulis & Koreksi</span>
+              </div>
+              <div class="catalog-body">
+                <h3>Stapler, Perforator & Gunting Kantor</h3>
+                <p>
+                  Peralatan pendukung meja kerja operasional seperti stapler
+                  (hekter) besar/kecil, pelubang kertas, dan gunting presisi.
+                </p>
+                <ul class="spec-list">
+                  <li>
+                    <i class="fa-solid fa-check"></i> Material Logam Kuat &
+                    Tahan Lama
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check"></i> Ergonomis & Mudah
+                    Dioperasikan
+                  </li>
+                </ul>
+                <div class="catalog-footer">
+                  <a
+                    href="https://wa.me/628158999400?text=Halo%20PT.%20SriRezeki%20IndoTama,%20saya%20ingin%20konsultasi%20pengadaan%20Stapler%20dan%20Peralatan%20Meja"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn btn-primary btn-sm"
@@ -276,14 +320,14 @@
       </section>
     </main>
 
-    <!-- Footer (Konsisten) -->
+    <!-- Footer -->
     <footer class="footer" id="contact">
       <div class="footer-content">
         <div class="footer-info">
           <div class="brand-logo">PT Sri Rezeki <span>IndoTama</span></div>
           <p>
-            Mitra terpercaya untuk layanan pengadaan alat elektronik kantor dan
-            solusi korporat berkualitas tinggi.
+            Mitra terpercaya untuk pengadaan kebutuhan alat tulis dan
+            perlengkapan operasional kantor berkualitas tinggi.
           </p>
         </div>
         <div class="footer-links">
