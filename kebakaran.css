@@ -32,7 +32,6 @@ html {
   background-color: var(--white);
 }
 
-/* Hilangkan padding top agar background hero menyatu mulus di balik navbar fixed */
 body {
   line-height: 1.6;
   padding-top: 0 !important;
@@ -86,7 +85,7 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 1.15rem; /* Gap dirapatkan agar "Tentang Kami" muat 1 baris */
+  gap: 1.15rem;
   white-space: nowrap !important;
 }
 
@@ -252,7 +251,7 @@ body {
     url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80")
       center/cover no-repeat;
   color: var(--white);
-  padding: 160px 2rem 5rem 2rem !important;
+  padding: 180px 2rem 5rem 2rem !important;
   text-align: center;
   width: 100%;
 }
@@ -276,7 +275,7 @@ body {
 }
 
 /* ==========================================================================
-   6. KATALOG CONTENT & TOOLBAR (PENCARIAN & FILTER DIPERBAIKI)
+   6. KATALOG CONTENT & TOOLBAR (PENCARIAN & FILTER)
    ========================================================================== */
 .catalog-section {
   padding: 4rem 2rem 6rem 2rem;
@@ -288,7 +287,6 @@ body {
   margin: 0 auto;
 }
 
-/* KODE TOOLBAR DITAMBAHKAN KEMBALI DI SINI */
 .catalog-toolbar {
   display: flex;
   justify-content: space-between;
@@ -516,7 +514,7 @@ body {
   }
 
   .nav-links.active {
-    display: flex;
+    display: flex !important;
   }
 
   .nav-links > li > a:not(.btn) {
@@ -546,7 +544,7 @@ body {
   }
 
   .catalog-hero {
-    padding: 130px 1.25rem 3rem 1.25rem !important;
+    padding: 140px 1.25rem 3rem 1.25rem !important;
   }
 
   .catalog-hero h1 {
@@ -568,10 +566,13 @@ body {
   }
 
   .filter-categories {
+    display: flex;
     overflow-x: auto;
     padding-bottom: 0.25rem;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    gap: 0.5rem;
   }
 
   .filter-btn {
