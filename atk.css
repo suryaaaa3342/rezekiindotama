@@ -1,18 +1,25 @@
 /* ==========================================================================
    ATK CATALOG DESIGN SYSTEM & VARIABLES
    ========================================================================== */
-.nav-links a.active-nav {
-  color: var(--primary) !important;
-  font-weight: 700 !important;
+:root {
+  --primary: #de942c;
+  --primary-hover: #e38f20;
+  --gold: #d97706;
+  --gold-light: #f59e0b;
+  --dark: #0f172a;
+  --text: #334155;
+  --light-bg: #f8fafc;
+  --white: #ffffff;
+  --border: #e2e8f0;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dropdown-menu li a.active {
-  background-color: var(--light-bg);
-  color: var(--primary);
-  font-weight: 700;
-}
-
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,18 +34,32 @@ html {
 
 body {
   line-height: 1.6;
-  padding-top: 80px; /* Jarak aman agar konten tidak tertutup navbar fixed */
+  padding-top: 0 !important;
+  background-color: #0f172a;
+}
+
+.nav-links a.active-nav {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+}
+
+.dropdown-menu li a.active {
+  background-color: var(--light-bg);
+  color: var(--primary);
+  font-weight: 700;
 }
 
 /* ==========================================================================
-   NAVBAR & BRAND (Gelap Transparan Konsisten)
+   NAVBAR & BRAND (DIAMANKAN AGAR 1 BARIS PAS & TIDAK PATAH)
    ========================================================================== */
 .brand-logo {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--white);
   text-decoration: none;
   letter-spacing: -0.5px;
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .brand-logo span {
@@ -50,7 +71,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.85); /* Gelap transparan */
+  background: rgba(15, 23, 42, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -58,9 +79,10 @@ body {
 }
 
 .navbar {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1300px; /* Lebar kontainer sedikit diperluas agar muat */
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.6rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,19 +92,27 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem; /* Jarak dirapatkan agar pas */
+  white-space: nowrap !important;
+}
+
+.nav-links li {
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .nav-links > li > a:not(.btn) {
   text-decoration: none;
-  color: #ffffff !important; /* Teks menu navbar utama wajib putih */
+  color: #ffffff !important;
   font-weight: 500;
+  font-size: 0.9rem;
   transition: var(--transition);
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.3rem;
   background: transparent !important;
+  white-space: nowrap !important; /* Paksa teks "Tentang Kami" tidak turun baris */
 }
 
 .nav-links > li > a:not(.btn):hover {
@@ -100,14 +130,15 @@ body {
 }
 
 /* ==========================================================================
-   SUBMENU DROPDOWN (Kotak Putih & Teks Hitam Jelas Terbaca)
+   SUBMENU DROPDOWN (Kotak Putih, Teks Hitam Jelas)
    ========================================================================== */
 .dropdown {
   position: relative;
+  flex-shrink: 0;
 }
 
 .dropdown-icon {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   transition: var(--transition);
   color: #ffffff;
 }
@@ -121,7 +152,7 @@ body {
   top: 100%;
   left: 0;
   min-width: 240px;
-  background: #ffffff !important; /* Kotak dropdown wajib putih */
+  background: #ffffff !important;
   border: 1px solid var(--border);
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -145,11 +176,10 @@ body {
   transform: translateY(0);
 }
 
-/* Teks di dalam dropdown wajib gelap agar kontras dengan background putih */
 .dropdown-menu li a {
   padding: 0.75rem 1.25rem;
   font-size: 0.9rem;
-  color: #1e293b !important; /* Teks gelap/hitam */
+  color: #1e293b !important;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -157,6 +187,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   background: transparent !important;
+  white-space: normal !important;
 }
 
 .dropdown-menu li a i {
@@ -179,59 +210,57 @@ body {
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: 0.35rem;
+  padding: 0.5rem 1.15rem;
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
   transition: var(--transition);
   cursor: pointer;
   border: 2px solid transparent;
+  font-size: 0.9rem;
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .btn-primary {
   background-color: var(--primary);
   color: var(--white) !important;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 14px rgba(222, 148, 44, 0.3);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
-}
-
-.btn-sm {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.85rem;
 }
 
 .badge {
   display: inline-block;
   padding: 0.35rem 1rem;
-  background-color: rgba(99, 102, 241, 0.1);
-  color: var(--primary);
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--gold-light);
   border-radius: 30px;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 /* ==========================================================================
-   KATALOG STYLES
+   KATALOG HERO (Menyatu Mulus di Balik Navbar, Teks Aman)
    ========================================================================== */
 .catalog-hero {
   background:
     linear-gradient(
       135deg,
-      rgba(15, 23, 42, 0.95) 0%,
+      rgba(15, 23, 42, 0.92) 0%,
       rgba(30, 41, 59, 0.9) 100%
     ),
     url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80")
       center/cover no-repeat;
   color: var(--white);
-  padding: 9rem 2rem 5rem 2rem;
+  padding: 150px 2rem 5rem 2rem !important;
   text-align: center;
+  width: 100%;
 }
 
 .catalog-hero-content {
@@ -242,8 +271,9 @@ body {
 .catalog-hero h1 {
   font-size: 2.75rem;
   font-weight: 800;
-  margin: 1rem 0;
+  margin: 0.5rem 0 1rem 0;
   color: var(--white);
+  line-height: 1.2;
 }
 
 .catalog-hero p {
@@ -331,7 +361,7 @@ body {
 /* Card Grid Katalog */
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -349,7 +379,7 @@ body {
 .catalog-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: transparent;
+  border-color: var(--primary);
 }
 
 .catalog-img {
@@ -491,8 +521,15 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (MOBILE)
+   RESPONSIVE DESIGN (TABLET & MOBILE)
    ========================================================================== */
+@media (max-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -503,11 +540,11 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--white);
+    background: var(--dark);
     flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
-    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--shadow-md);
     display: none;
     align-items: flex-start;
@@ -515,6 +552,10 @@ body {
 
   .nav-links.active {
     display: flex;
+  }
+
+  .nav-links > li > a:not(.btn) {
+    width: 100%;
   }
 
   .dropdown {
@@ -530,15 +571,25 @@ body {
     box-shadow: none;
     border: none;
     width: 100%;
+    background: rgba(255, 255, 255, 0.05) !important;
     padding-left: 1rem;
     margin-top: 0.5rem;
   }
 
-  .catalog-hero {
-    padding-top: 7rem;
+  .dropdown-menu li a {
+    color: var(--white) !important;
   }
+
+  .catalog-hero {
+    padding: 120px 1.25rem 3rem 1.25rem !important;
+  }
+
   .catalog-hero h1 {
     font-size: 2rem;
+  }
+
+  .catalog-section {
+    padding: 3rem 1rem 4rem 1rem;
   }
 
   .catalog-toolbar {
@@ -553,5 +604,27 @@ body {
   .filter-categories {
     overflow-x: auto;
     padding-bottom: 0.25rem;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-hero h1 {
+    font-size: 1.65rem;
+  }
+
+  .brand-logo {
+    font-size: 1.15rem;
   }
 }
