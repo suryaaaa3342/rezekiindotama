@@ -80,7 +80,7 @@ body {
 
 .navbar {
   width: 100%;
-  max-width: 1300px; /* Lebar kontainer sedikit diperluas agar muat */
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0.6rem 1.5rem;
   display: flex;
@@ -92,7 +92,7 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 1rem; /* Jarak dirapatkan agar pas */
+  gap: 1rem;
   white-space: nowrap !important;
 }
 
@@ -112,7 +112,7 @@ body {
   align-items: center;
   gap: 0.3rem;
   background: transparent !important;
-  white-space: nowrap !important; /* Paksa teks "Tentang Kami" tidak turun baris */
+  white-space: nowrap !important;
 }
 
 .nav-links > li > a:not(.btn):hover {
@@ -551,7 +551,7 @@ body {
   }
 
   .nav-links.active {
-    display: flex;
+    display: flex !important;
   }
 
   .nav-links > li > a:not(.btn) {
@@ -601,11 +601,15 @@ body {
     width: 100%;
   }
 
+  /* Perbaikan tombol filter kategori agar bisa digeser menyamping (scroll horizontal) di HP */
   .filter-categories {
+    display: flex;
     overflow-x: auto;
     padding-bottom: 0.25rem;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    gap: 0.5rem;
   }
 
   .filter-btn {
